@@ -22,11 +22,21 @@ const ctx = myCanvas.getContext('2d');
 
 
 // third figure
-    ctx.fillStyle='rgb(0,0,255)'; 
-    ctx.fillRect(30,30,300,300);           
-    ctx.fillStyle='rgba(0,255,0,0.5)';  
-    ctx.fillRect(60,60,300,300);    
-    ctx.fillStyle='rgba(255,0,0,0.25)';  
-    ctx.fillRect(90,90,300,300);
-    ctx.fillStyle='rgba(255,0,0,0.75)';  
-    ctx.fillRect(120,120,300,300); 
+    // ctx.fillStyle='rgb(0,0,255)'; 
+    // ctx.fillRect(30,30,300,300);           
+    // ctx.fillStyle='rgba(0,255,0,0.5)';  
+    // ctx.fillRect(60,60,300,300);    
+    // ctx.fillStyle='rgba(255,0,0,0.25)';  
+    // ctx.fillRect(90,90,300,300);
+    // ctx.fillStyle='rgba(255,0,0,0.75)';  
+    // ctx.fillRect(120,120,300,300); 
+
+    // forth figure
+    const ctxGradient=ctx.createRadialGradient(300,300,0,300,300,300);           
+    ctxGradient.addColorStop("0","magenta");// Adds a color stop to a gradient. A color stop is a position in the gradient where a color 							change occurs. The offset must be between 0 and 1.
+    ctxGradient.addColorStop(".25","blue");
+    ctxGradient.addColorStop(".50","green");
+    ctxGradient.addColorStop(".75","yellow");
+    ctxGradient.addColorStop("1.0","red");                
+    ctx.fillStyle=ctxGradient;
+    ctx.fillRect(0,0,400,400);
